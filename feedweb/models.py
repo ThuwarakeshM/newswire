@@ -1,21 +1,20 @@
-import datetime
-
 from django.db import models
 
+
 # Create your models here.
-
-class FeedCategory(models.Model):
-    feed_category_name = models.CharField(max_length=20)
-
-    def __str__(self):
-        return self.feed_category_name
-
-
 class FeedLanguage(models.Model):
     feed_language_code = models.CharField(max_length=2)
 
     def __str__(self):
         return self.feed_language_code
+
+
+class FeedCategory(models.Model):
+    feed_category_name = models.CharField(max_length=20)
+    feed_category_lang = models.ForeignKey(FeedLanguage, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.feed_category_name
 
 
 class Feed(models.Model):
