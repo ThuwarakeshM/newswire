@@ -4,7 +4,8 @@ from smart_selects.db_fields import ChainedForeignKey
 
 # Create your models here.
 class FeedLanguage(models.Model):
-    feed_language_code = models.CharField(max_length=2, unique=True)
+    feed_language_code = models.CharField(max_length=4, unique=True)
+    feed_language_name = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
         return self.feed_language_code

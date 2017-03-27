@@ -27,7 +27,7 @@
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Language
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                    {% for lang in languages %}<li><a href="{% url 'feedweb:LangView' lang.feed_language_code %}">{{ lang.feed_language_code }}</a></li>{% endfor %}
+                    {% for lang in languages %}<li><a href="{% url 'feedweb:LangView' lang.feed_language_code %}">{{ lang.feed_language_name }}</a></li>{% endfor %}
                 </ul>
             </div>
         </ul>
