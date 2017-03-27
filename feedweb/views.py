@@ -1,23 +1,22 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 
 from .models import FeedCategory, Feed, Section
 
 
-def index(request, feed_id=0, lang="TA", category=0):
+def index(request, lang='TA', cat=0):
     categories = FeedCategory.objects.filter(feed_category_lang__feed_language_code=lang)
-    latest_feeds = Feed.objects.all().order_by('-pub_date')[:5]
-    if (feed_id):
-        feed = get_object_or_404(Feed, pk=feed_id)
-        feed_Sections = Section.objects.filter(feed_id=feed_id)
+    if cat:
+        feeds = Feed.objects.filter(feed_category=cat, feed_language__feed_language_code=lang)[:5]
     else:
-        feed = 0
-        feed_Sections = 0
+        feeds = Feed.objects.filter(feed_language__feed_language_code=lang)[:5]
+    feed = feeds[0]
+
+    feed_sections = Section.objects.filter(feed_id=feed.id)
 
     context = {
-
-        'feed': feed,
-        'feed_sections': feed_Sections,
         'categories': categories,
-        'latest_feeds': latest_feeds,
+        'feeds': feeds,
+        'feed': feed,
+        'feed_sections': feed_sections,
     }
     return render(request, 'feedweb/index.html', context)
