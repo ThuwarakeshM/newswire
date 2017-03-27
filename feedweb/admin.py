@@ -10,11 +10,10 @@ class SectionInline(admin.StackedInline):
 
 
 class FeedAdmin(admin.ModelAdmin):
-    fields = ['title', 'feed_category', 'feed_language']
+    fields = ['title', 'feed_language', 'feed_category']
     inlines = [SectionInline]
 
 
 admin.site.register(Feed, FeedAdmin)
 admin.site.register(FeedCategory)
 admin.site.register(FeedLanguage)
-

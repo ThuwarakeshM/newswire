@@ -1,4 +1,5 @@
 from django.db import models
+from smart_selects.db_fields import ChainedForeignKey
 
 
 # Create your models here.
@@ -23,8 +24,9 @@ class FeedCategory(models.Model):
 class Feed(models.Model):
     title = models.CharField(max_length=250)
     pub_date = models.DateTimeField('pub_date', auto_now_add=True)
-    feed_category = models.ForeignKey(FeedCategory, on_delete=models.CASCADE)
     feed_language = models.ForeignKey(FeedLanguage, on_delete=models.CASCADE)
+    # feed_category = models.ForeignKey(FeedCategory, on_delete=models.CASCADE)
+    feed_category = ChainedForeignKey(FeedCategory, chained_field="feed_language", chained_model_field="feed_category_lang", show_all=False, auto_choose=True, sort=True)
 
     def __str__(self):
         return self.title

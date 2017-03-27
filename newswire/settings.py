@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'smart_selects',
     'feedweb.apps.FeedwebConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -127,3 +128,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+USE_DJANGO_JQUERY = False
+
+JQUERY_URL = False
