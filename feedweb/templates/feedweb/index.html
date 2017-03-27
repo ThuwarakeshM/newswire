@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>NewsWire</title>
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/slate/bootstrap.min.css"/>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -12,13 +17,20 @@
         {% if categories %}
             <ul class="nav navbar-nav">
                 {% for item in categories %}
-                    <li class="active"><a href="?cat={{ item.feed_category_name }}">{{ item.feed_category_name }}</a>
+                    <li class="active"><a href="{% url 'feedweb:CatView' item.id %}">{{ item.feed_category_name }}</a>
                     </li>
                 {% endfor %}
             </ul>
         {% endif %}
-
-    </div>
+        <ul class="nav navbar-nav navbar-right">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Language
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    {% for lang in languages %}<li><a href="{% url 'feedweb:LangView' lang.feed_language_code %}">{{ lang.feed_language_code }}</a></li>{% endfor %}
+                </ul>
+            </div>
+        </ul>
     </div>
 </nav>
 
@@ -28,9 +40,14 @@
             <h1>{{ feed.title }}</h1>
             {% for section in feed_sections %}
                 {% if section.section_title %}<h2>{{ section.section_title }}</h2>{% endif %}
-                {% if section.section_body %}<p1>{{ section.section_body }}</p1>{% endif %}
-                {% if section.section_image.url %}<img src="{{ section.section_image.url }}"/>{% endif %}
-                {% if section.section_video_url %}<iframe width="420" height="315" src="{{ section.section_video_url }}"></iframe>{% endif %}
+                {% if section.section_body %}
+                    <p1>{{ section.section_body }}</p1>{% endif %}
+                <br/>
+                {% if section.section_image.url %}<img src="{{ section.section_image.url }}" height="420" width="600"/>
+                {% endif %}
+                <br/>
+                {% if section.section_video_url %}
+                    <iframe width="420" height="315" src="{{ section.section_video_url }}"></iframe>{% endif %}
             {% endfor %}
         </div>
     </div>
@@ -38,7 +55,7 @@
         {% if feeds %}
             <div class="list-group">
                 {% for item in feeds %}
-                    <a href="{% url 'feedweb:index' item.id %}" class="list-group-item active">
+                    <a href="{% url 'feedweb:FeedView' item.id %}" class="list-group-item active">
                         {{ item.title }}
                     </a>
                 {% endfor %}
@@ -46,5 +63,6 @@
         {% endif %}
     </div>
 </div>
+
 </body>
 </html>
