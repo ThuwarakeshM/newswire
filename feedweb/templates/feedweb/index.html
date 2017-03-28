@@ -12,6 +12,12 @@
 </head>
 <body>
 
+<div class="container-fluid">
+    <div class="col-lg-1 col-offset-6 centered">
+        <H1>KinyMony</H1>
+    </div>
+</div>
+
 <nav class="navbar navbar-default">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         {% if categories %}
@@ -35,7 +41,7 @@
 </nav>
 
 <div class="container-fluid">
-    <div class="col-sm-8 col-md-8">
+    <div class="col-sm-12 col-md-8">
         <div class="jumbotron">
             <h1>{{ feed.title }}</h1>
             {% for section in feed_sections %}
@@ -51,7 +57,7 @@
             {% endfor %}
         </div>
     </div>
-    <div class="col-sm-4 col-md-4">
+    <div class="col-sm-12 col-md-4">
         {% if feeds %}
             <div class="list-group">
                 {% for item in feeds %}

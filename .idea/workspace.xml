@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13e958cb-e693-4ad0-9cc9-5d2adfec48a2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feedweb/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/feedweb/migrations/0001_initial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feedweb/models.py" afterPath="$PROJECT_DIR$/feedweb/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feedweb/templates/feedweb/index.html" afterPath="$PROJECT_DIR$/feedweb/templates/feedweb/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feedweb/views.py" afterPath="$PROJECT_DIR$/feedweb/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,7 +51,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/feedweb/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
@@ -100,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/feedweb/templates/feedweb/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="45" column="43" lean-forward="false" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
+            <state relative-caret-position="323">
+              <caret line="63" column="69" lean-forward="false" selection-start-line="63" selection-start-column="69" selection-end-line="63" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -133,8 +129,8 @@
         <option value="$PROJECT_DIR$/feedweb/admin.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/034046da-63e8-4120-b024-8771eb49c836/console.sql" />
         <option value="$PROJECT_DIR$/feedweb/models.py" />
-        <option value="$PROJECT_DIR$/feedweb/templates/feedweb/index.html" />
         <option value="$PROJECT_DIR$/feedweb/views.py" />
+        <option value="$PROJECT_DIR$/feedweb/templates/feedweb/index.html" />
       </list>
     </option>
   </component>
@@ -520,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490650175761</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="bugfix cat_id">
+      <created>1490674927043</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1490674927043</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -562,7 +565,8 @@
     <MESSAGE value="front end initial ready" />
     <MESSAGE value="admin site chained FK added" />
     <MESSAGE value="admin site language name added" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin site language name added" />
+    <MESSAGE value="bugfix cat_id" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix cat_id" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -956,14 +960,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/feedweb/templates/feedweb/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="45" column="43" lean-forward="false" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/feedweb/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -979,6 +975,14 @@
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feedweb/templates/feedweb/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="63" column="69" lean-forward="false" selection-start-line="63" selection-start-column="69" selection-end-line="63" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
