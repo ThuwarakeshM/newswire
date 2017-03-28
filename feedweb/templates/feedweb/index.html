@@ -43,7 +43,7 @@
                 {% if section.section_body %}
                     <p1>{{ section.section_body }}</p1>{% endif %}
                 <br/>
-                {% if section.section_image.url %}<img src="{{ section.section_image.url }}" height="420" width="600"/>
+                {% if section.section_image %}<img src="{{ section.section_image.url }}" height="420" width="600"/>
                 {% endif %}
                 <br/>
                 {% if section.section_video_url %}

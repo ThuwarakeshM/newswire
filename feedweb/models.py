@@ -37,5 +37,5 @@ class Section(models.Model):
     section_title = models.CharField(max_length=250, blank=True)
     section_body = models.TextField(max_length=5000, blank=True)
     section_video_url = models.URLField(max_length=2000, blank=True)
-    section_image = models.ImageField(upload_to='img/%Y/%m/%d')
+    section_image = models.ImageField(upload_to='img/%Y/%m/%d', blank=True)
     feed = models.ForeignKey(Feed, on_delete=models.CASCADE)

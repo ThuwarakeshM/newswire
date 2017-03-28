@@ -1,10 +1,11 @@
 from django.shortcuts import render
+from django.utils import timezone
 
 from .models import FeedCategory, Feed, Section, FeedLanguage
 
 
 def home(request):
-    return index(request, lang='TA', cat=0, feedid=0)
+    return index(request, lang='EN', cat=0, feedid=0)
 
 
 def categoryView(request, cat):
@@ -27,7 +28,7 @@ def index(request, lang, cat, feedid):
         feed = Feed.objects.get(pk=feedid)
         feeds = Feed.objects.filter(feed_category_id=feed.feed_category.id, feed_language_id=feed.feed_language.id)[:5]
     elif cat:
-        feeds = Feed.objects.filter(feed_category__feed_category_lang_id=cat, feed_language__feed_language_code=lang)[
+        feeds = Feed.objects.filter(feed_category_id=cat, feed_language__feed_language_code=lang)[
                 :5]
         feed = feeds[0]
     else:
